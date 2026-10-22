@@ -1,7 +1,7 @@
 [project]
 name = "support-agent-reliability"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reliability harness for an LLM support agent: evals, tracing, CI gates, fault injection, drift detection"
 readme = "README.md"
 authors = [
     { name = "Vaibhav Yadav", email = "yadav.vaib@northeastern.edu" }
@@ -18,16 +18,19 @@ dependencies = [
     "tenacity>=9.2.1",
 ]
 
-[project.scripts]
-support-agent-reliability = "support_agent_reliability:main"
-
-[build-system]
-requires = ["uv_build>=0.13.5,<0.14.0"]
-build-backend = "uv_build"
-
 [dependency-groups]
 dev = [
     "pre-commit>=4.7.0",
     "pytest>=9.1.1",
     "ruff>=0.17.1",
 ]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
