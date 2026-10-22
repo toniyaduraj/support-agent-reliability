@@ -1,0 +1,33 @@
+[project]
+name = "support-agent-reliability"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vaibhav Yadav", email = "yadav.vaib@northeastern.edu" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.1.0",
+    "numpy>=2.5.4",
+    "pgvector>=0.5.1",
+    "psycopg[binary]>=3.3.6",
+    "pydantic>=2.14.1",
+    "python-dotenv>=1.2.4",
+    "sentence-transformers>=6.2.0",
+    "tenacity>=9.2.1",
+]
+
+[project.scripts]
+support-agent-reliability = "support_agent_reliability:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "pytest>=9.1.1",
+    "ruff>=0.17.1",
+]
