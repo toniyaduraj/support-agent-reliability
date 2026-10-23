@@ -11,4 +11,4 @@ jobs:
       - uses: astral-sh/setup-uv@v10.3.1
       - run: uv sync
       - run: uv run ruff check .
-      - run: uv run pytest -q || [ $? -eq 5 ]
+      - run: uv run pytest -q
