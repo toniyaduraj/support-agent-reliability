@@ -9,3 +9,4 @@
 - Escalation tests pass (out_of_scope, account_specific). Policy question: escalating obviously off-topic questions (weather) wastes human time; consider decline-only for off-topic. Ticket ID shown inconsistently.
 - ruff BLE001 flagged blind except in run_tool. Kept it deliberately (tool boundary returns errors to model) with noqa + reason. Revisit in Week 6: typed errors vs catch-all.
 - Writing reference answers: my first q-049 answer (from an assistant's prior knowledge) described only v1 tracks; doc shows v2 Nightly/Stable/Extended/Fallback + v1 tracks. Lesson: reference answers must come from the doc, not memory, same failure q-048 tests the agent for.
+- Fresh clone reproduced exactly (8801 chunks, corpus 8398a565, 70s). Only manual step: copy .env. Found label too narrow: q-011 retrieval hit reference/commands/seed, which also answers it; added to expected_doc_ids. Lesson: narrow labels create false retrieval misses.
